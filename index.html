@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>현듀 ❤️ 연듀 | Happy 2nd Anniversary</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 35px 20px 60px;
+  background: #fffef4;
+  color: #49463d;
+  font-family: "Malgun Gothic", Arial, sans-serif;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.thumbnail {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: transform .2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.025);
+}
+
+.letter {
+  max-width: 1000px;
+  margin: 45px auto 0;
+  padding: 35px 40px;
+  background: #fffbdc;
+  border-radius: 14px;
+  line-height: 2;
+  font-size: 15px;
+  overflow-wrap: break-word;
+}
+
+.letter-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.letter-header h1 {
+  font-size: 27px;
+  font-weight: 500;
+  margin: 0 0 5px;
+  letter-spacing: 1px;
+}
+
+.letter-header p {
+  margin: 0;
+  color: #93866b;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.letter-content p {
+  margin: 0 0 22px;
+  white-space: pre-line;
+}
+
+.heart {
+  color: #e98991;
+}
+
+#fullscreen {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 29, 25, .94);
+  z-index: 1000;
+  cursor: pointer;
+  padding: 15px;
+}
+
+#fullscreen img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .letter {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px 10px 35px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .letter {
+    margin-top: 25px;
+    padding: 23px 18px;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .letter-header h1 {
+    font-size: 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="gallery" id="gallery"></div>
+
+<section class="letter">
+  <header class="letter-header">
+    <h1>현듀 <span class="heart">♥</span> 연듀</h1>
+    <p>Happy 2nd Anniversary</p>
+  </header>
+
+  <div class="letter-content">
+    <p><strong>2-1</strong><br>현듀 ❤️ 연듀</p>
+
+    <p><strong>2-2</strong><br>X</p>
+
+    <p><strong>2-3</strong><br>현듀야~<br>
+부산 여행으로 우리의 1일로 시작해서 1주년 경주 여행을 지나 벌써 2주년 강릉 여행까지 오게 됐네.
+너도 나도 일상생활에서 스트레스받는 일들이 많았을 텐데 이번 강릉에서는 맛있는 것도 먹고 예쁜 것도 보고 좋은 시간 보내자.</p>
+
+    <p>우리가 함께한 2년을 돌아보면 참 많은 일들이 있었지.
+내가 토라져서 서로 속상한 일이 생겼을 때도 있었지만 네가 많이 신경 써주고 먼저 다가와 사과해 준 덕분에 큰 문제 없이 잘 만날 수 있었던 것 같아.
+그런 일들이 안 생기는 게 제일 좋겠지만 앞으로도 우리가 함께하다 보면 다투거나 의견이 충돌하는 순간들이 있을 텐데 서로의 마음을 잘 이야기하고 이해하면서 하나씩 해결해 나가자.</p>
+
+    <p>그리고 그동안 나 많이 챙겨주고, 이해해주고, 귀여워해주고, 배려해주고, 존중해주고, 노력해주고, 알아봐주고, 기다려주고, 웃게 해주고, 귀 기울여주고, 확신을 주고, 마음 써주고, 걱정해주고, 기억해주고, 표현해주고, 달래주고, 예뻐해주고, 양보해주고, 아껴주고, 생각해주고, 있는 그대로의 나를 좋아해주고, 사랑해줘서 정말 고마워.</p>
+
+    <p>앞으로도 잘 부탁해~<br>
+우리의 두 번째 기념일을 축하해.<br>
+현듀야, 사랑해 <span class="heart">❤️</span></p>
+  </div>
+</section>
+
+<div id="fullscreen" onclick="closeFullscreen()">
+  <img src="" id="fullscreen-img" alt="확대 사진">
+</div>
+
+<script>
+const photos = [
+  "https://github.com/namankum/du/blob/main/IMG_3020.jpeg?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3022.jpeg?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3023.jpeg?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3027.jpeg?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3029.jpeg?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3030.jpeg?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3034.png?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3035.png?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3036.png?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3037.png?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3038.png?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3039.png?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3040.png?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3041.png?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3042.png?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3043.png?raw=true",
+  "https://github.com/namankum/du/blob/main/IMG_3045.png?raw=true"
+];
+
+const gallery = document.getElementById("gallery");
+
+photos.forEach((src, index) => {
+  const img = document.createElement("img");
+  img.src = src;
+  img.alt = `추억 사진 ${index + 1}`;
+  img.className = "thumbnail";
+  img.loading = index < 5 ? "eager" : "lazy";
+
+  img.addEventListener("click", () => {
+    document.getElementById("fullscreen-img").src = src;
+    document.getElementById("fullscreen").style.display = "flex";
+  });
+
+  gallery.appendChild(img);
+});
+
+function closeFullscreen() {
+  document.getElementById("fullscreen").style.display = "none";
+  document.getElementById("fullscreen-img").src = "";
+}
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeFullscreen();
+});
+</script>
+
+</body>
+</html>
